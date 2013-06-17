@@ -1,0 +1,111 @@
+---
+layout: page
+title: 仁言利博
+tagline: 科技 人文 生活
+---
+{% include JB/setup %}
+    
+<!-- ## Blog Posts -->
+
+<!-- Here's a my blog list.
+
+<ul class="posts">
+  {% for post in site.posts %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
+
+## To-Do -->
+
+<!-- This loops through the paginated posts -->
+{% for post in paginator.posts %}
+  pull
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <p class="author">
+    <span class="date">{{ post.date }}</span>
+  </p>
+  <div class="content">
+    {{ post.content }} hello
+  </div>
+{% endfor %}
+
+<!-- Pagination links -->
+<div id="post-pagination" class="pagination">
+  {% if paginator.previous_page %}
+    <p class="previous">
+      {% if paginator.previous_page == 1 %}
+        <a href="/">Previous</a>
+      {% else %}
+        <a href="/blog/page{{ paginator.previous_page }}">Previous</a>
+      {% endif %}
+    </p>
+  {% else %}
+    <p class="previous disabled">
+      <span>Previous</span>
+    </p>
+  {% endif %}
+
+  <ul class="pages">
+    <li class="page">
+      {% if paginator.page == 1 %}
+        <span class="current-page">1</span>
+      {% else %}
+        <a href="/">1</a>
+      {% endif %}
+    </li>
+
+    {% for count in (2..paginator.total_pages) %}
+      <li class="page">
+        {% if count == paginator.page %}
+          <span class="current-page">{{ count }}</span>
+        {% else %}
+          <a href="/blog/page{{ count }}">{{ count }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% if paginator.next_page %}
+    <p class="next">
+      <a href="/blog/page{{ paginator.next_page }}">Next</a>
+    </p>
+  {% else %}
+    <p class="next disabled">
+      <span>Next</span>
+    </p>
+  {% endif %}
+
+</div>
+
+<!-- 
+{% for post in site.posts limit:2 %}
+<div class="post">
+  <div class="top">
+    <time datetime="{{ post.date | xmlschema }}">{{ post.date | date: "%d %b" }}</time>
+    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  </div>
+  <div class="content">
+    {{ post.content}}
+  </div>
+  <div class="bottom">
+    <span>{{post.date | date: "%A %D"}}</span>
+  </div>
+</div>
+{% endfor %}
+
+<div class="post index archive">
+  <div class="top">
+    <h2>Archive</h2>
+  </div>
+  <div class="content">
+    <ol id="archive">
+      {% for post in site.posts offset:2 %}
+      <li>
+        <time datetime="{{ post.date | xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+        <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+  <div class="bottom"></div>
+</div> -->
