@@ -5,7 +5,7 @@ tagline: 科技 人文 生活
 ---
 {% include JB/setup %}
     
-<!-- ## Blog Posts -->
+<!-- ##Blog Posts -->
 
 <!-- Here's a my blog list.
 
@@ -15,18 +15,21 @@ tagline: 科技 人文 生活
   {% endfor %}
 </ul>
 
-## To-Do -->
-
+##To-Do
+ -->
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
-  pull
+  
+  <!-- start  posts -->
   <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
   <p class="author">
-    <span class="date">{{ post.date }}</span>
+    <span class="date">{{ post.date |date_to_long_string}}</span>
   </p>
   <div class="content">
-    {{ post.content }} hello
+    {{ post.summary }}
   </div>
+
+  <!-- end  posts-->
 {% endfor %}
 
 <!-- Pagination links -->
