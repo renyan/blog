@@ -2,8 +2,8 @@
 layout: post
 title: "sphinx文档国际化"
 description: ""
-category: “技术”
-tags: []
+category: "tech"
+tags: [sphinx]
 ---
 {% include JB/setup %}
 
