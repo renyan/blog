@@ -64,7 +64,7 @@ task :post do
     post.puts "layout: post"
     post.puts "title: \"#{title.gsub(/-/,' ')}\""
     post.puts 'description: ""'
-    post.puts "category: "
+    post.puts "categories: "
     post.puts "tags: []"
     post.puts "---"
     post.puts "{% include JB/setup %}"
@@ -98,7 +98,7 @@ end # task :page
 
 desc "Launch preview environment"
 task :preview do
-  system "jekyll --auto --server"
+  system "jekyll server"
 end # task :preview
 
 # Public: Alias - Maintains backwards compatability for theme switching.
