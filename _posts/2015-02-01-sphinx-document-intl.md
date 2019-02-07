@@ -1,10 +1,8 @@
 ---
-layout: post
 title: "sphinx文档国际化"
 description: ""
 categories: tech
 ---
-
 
 #安装sphinx
 
