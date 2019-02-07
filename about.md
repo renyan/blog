@@ -1,21 +1,18 @@
 ---
 layout: page
-title: "About"
-header: About
-group: navigation
-description: ""
+title: About
+permalink: /about/
 ---
-{% include JB/setup %}
 
-## Basic
- Name:{{site.author.name}}
+This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
 
- Email:{{site.author.email}}
+You can find the source code for Minima at GitHub:
+[jekyll][jekyll-organization] /
+[minima](https://github.com/jekyll/minima)
 
- Github: {{site.author.github}}
-
- Twitter:{{site.author.twitter}}
-
- 微博:http://weibo.com/savechina
+You can find the source code for Jekyll at GitHub:
+[jekyll][jekyll-organization] /
+[jekyll](https://github.com/jekyll/jekyll)
 
 
+[jekyll-organization]: https://github.com/jekyll

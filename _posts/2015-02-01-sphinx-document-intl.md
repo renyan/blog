@@ -2,10 +2,9 @@
 layout: post
 title: "sphinx文档国际化"
 description: ""
-category: "tech"
-tags: [sphinx]
+categories: tech
 ---
-{% include JB/setup %}
+
 
 #安装sphinx
 
