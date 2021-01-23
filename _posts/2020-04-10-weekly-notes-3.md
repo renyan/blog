@@ -2,7 +2,7 @@
 layout: post
 title: "一周格致随想（第3期）"
 description: "一周格致随想（第3期）"
-date:  2021-04-10 15:11:02 +0800
+date:  2020-04-10 15:11:02 +0800
 categories: life notes
 ---
 
