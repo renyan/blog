@@ -4,9 +4,9 @@ title: About
 permalink: /about/
 ---
 
-# Base 
+## Base 
 
-Name: {{site.name}}
+Name: {{site.author.name}}
 
 <!-- 
 You can find the source code for Minima at GitHub:
