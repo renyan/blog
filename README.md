@@ -5,8 +5,8 @@ RenYan's Blog
 
 ## 感悟
 
-'''plantuml
+```plantuml
 @startuml
 a -> b 
 @enduml
-'''
+```
