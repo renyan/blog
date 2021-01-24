@@ -29,6 +29,8 @@ GEM
       rouge (~> 3.0)
       safe_yaml (~> 1.0)
       terminal-table (~> 2.0)
+    jekyll-diagrams (0.10.0)
+      jekyll (>= 3.8, < 5.0)
     jekyll-feed (0.15.1)
       jekyll (>= 3.7, < 5.0)
     jekyll-sass-converter (2.1.0)
@@ -41,9 +43,6 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
-    kramdown-plantuml (1.0.5)
-      kramdown (~> 2.3)
-      open3 (~> 0.1)
     liquid (4.0.3)
     listen (3.4.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -53,7 +52,6 @@ GEM
       jekyll (>= 3.5, < 5.0)
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
-    open3 (0.1.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
@@ -75,9 +73,9 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.2)
+  jekyll-diagrams
   jekyll-feed (~> 0.15.1)
   jekyll-seo-tag (~> 2.7)
-  kramdown-plantuml (~> 1.0, >= 1.0.5)
   minima (~> 2.5, >= 2.5.1)
   tzinfo-data
   webrick (~> 1.7)
