@@ -38,12 +38,15 @@ header_pages:
   - index.md
   - about.md
 
+kramdown:
+
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - kramdown-plantuml
 
 
 # Exclude from processing.

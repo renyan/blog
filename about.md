@@ -8,6 +8,14 @@ permalink: /about/
 
 Name: {{site.author.name}}
 
+```plantuml
+
+A -> B
+
+B --> A
+
+```
+
 <!-- 
 You can find the source code for Minima at GitHub:
 [jekyll][jekyll-organization] /
