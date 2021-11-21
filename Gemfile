@@ -21,7 +21,8 @@ gem 'minima', '~> 2.5', '>= 2.5.1'
 group :jekyll_plugins do
   gem 'jekyll-feed', '~> 0.15.1'
   gem 'jekyll-seo-tag' ,'~> 2.7'
-  gem 'jekyll-diagrams'
+  # gem 'jekyll-remote-plantuml'
+  gem 'jekyll-spaceship'
   # gem 'kramdown-plantuml', '~> 1.0', '>= 1.0.5'
   end
 

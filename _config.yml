@@ -38,16 +38,30 @@ header_pages:
   - index.md
   - about.md
 
-kramdown:
-
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-diagrams
+  - jekyll-spaceship
+  # - jekyll-remote-plantuml
 
+# Where things are
+jekyll-spaceship:
+  # default enabled processors
+  processors:
+    - table-processor
+    - mathjax-processor
+    - plantuml-processor
+  plantuml-processor:
+    mode: default  # mode value 'pre-fetch' for fetching image at building stage
+    css:
+      class: plantuml
+    syntax:
+      code: 'plantuml2!'
+      custom: ['@startuml', '@enduml']
+    src: http://www.plantuml.com/plantuml/svg/
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
