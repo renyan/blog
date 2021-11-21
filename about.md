@@ -22,7 +22,6 @@ Bob -> Alice : hello
 | ^^                 |          6 NADH |     15 ATP |
 | ^^                 |          2 FADH |      3 ATP |
 |                               30--32 ATP        |||
-
 <!-- 
 You can find the source code for Minima at GitHub:
 [jekyll][jekyll-organization] /
