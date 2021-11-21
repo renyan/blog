@@ -2,6 +2,7 @@
 layout: post
 title: "一周格致随想（第1期）"
 description: "一周格致随想（第1期）"
+author: "魏仁言"
 date:  2020-02-23 15:11:02 +0800
 categories: life notes
 ---

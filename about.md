@@ -23,6 +23,12 @@ Name: {{site.author.name}}
 | ^^                 |          2 FADH |      3 ATP |
 |                               30--32 ATP        |||
 
+
+@startuml
+
+  Bob -> Alice : hello
+
+@enduml
 <!-- 
 You can find the source code for Minima at GitHub:
 [jekyll][jekyll-organization] /
@@ -30,4 +36,4 @@ You can find the source code for Minima at GitHub:
 
 
 [jekyll-organization]: https://github.com/jekyll
- -->
+ --> 

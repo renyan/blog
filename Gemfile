@@ -24,7 +24,9 @@ group :jekyll_plugins do
   # gem 'jekyll-remote-plantuml'
   gem 'jekyll-spaceship'
   # gem 'kramdown-plantuml', '~> 1.0', '>= 1.0.5'
-  end
+  gem 'jekyll-toc'
+
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
