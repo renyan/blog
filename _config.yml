@@ -45,7 +45,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-spaceship
-  # - jekyll-remote-plantuml
 
 # Where things are
 jekyll-spaceship:
@@ -59,7 +58,7 @@ jekyll-spaceship:
     css:
       class: plantuml
     syntax:
-      code: 'plantuml2!'
+      code: 'plantuml!'
       custom: ['@startuml', '@enduml']
     src: http://www.plantuml.com/plantuml/svg/
 # Exclude from processing.
