@@ -46,12 +46,16 @@ plugins:
   - jekyll-seo-tag
   - jekyll-spaceship
 
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
 # Where things are
 jekyll-spaceship:
   # default enabled processors
   processors:
     - table-processor
-    - mathjax-processor
+    # - mathjax-processor
     - plantuml-processor
   plantuml-processor:
     mode: default  # mode value 'pre-fetch' for fetching image at building stage

@@ -8,9 +8,9 @@ permalink: /about/
 
 Name: {{site.author.name}}
 
-@startuml
-Bob -> Alice : hello
-@enduml
+```plantuml!
+  Bob -> Alice : hello
+ ```
 
 
 |              Stage | Direct Products | ATP Yields |
