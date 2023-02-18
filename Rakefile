@@ -60,21 +60,31 @@ namespace :posts do
     puts last_name.to_s
   end
 
+  desc 'Show a next Blog posts, default :notes_name is "weekly notes"'
+  task :next, [:notes_name] do |_t, args|
+    args.with_defaults(notes_name: 'weekly')
+
+    name = args.notes_name
+
+    if name.eql?('weekly')
+      last_name = weekly_notes_name
+    elsif name.eql?('read')
+      last_name = read_notes_name
+    else
+      puts 'not support'
+    end
+
+    puts "next:#{last_name}"
+  end
+
   desc 'Create a Blog posts,this is :post alias .'
   task new: :post
 
   desc 'Create a Blog posts, weekly notes.'
-  task :post do |t|
-    now = Time.now
-    day = Date.today
-    num = 17
-    puts "Date.new #{t.name},#{now},#{now.strftime('%Y-%m-%d')},#{weekly_notes_name}"
-
-    puts weekly_notes_head.to_s
-
+  task :post do |_t|
     name = weekly_notes_name
 
-    puts name.to_s
+    puts "create posts #{name}"
 
     notes = File.new("_posts/#{name}", 'w')
 
@@ -85,9 +95,9 @@ namespace :posts do
 
   desc 'Create a Blog posts from a draft .'
   task :draft do |_t|
-    Dir['_drafts/*.md'].each do |fn|
-      puts fn.to_s
-    end
+    # Dir['_drafts/*.md'].each do |fn|
+    #   puts fn.to_s
+    # end
 
     draft_name = Dir['_drafts/*.md'].max
 
@@ -97,11 +107,11 @@ namespace :posts do
     title = draft_notes.readline
     draft_title = title.delete('#').strip
 
-    puts draft_title
+    puts "title: #{draft_title}"
 
     notes_head = weekly_notes_head.gsub('NOTES_TITLE_TODO_REPALCE', draft_title)
 
-    puts notes_head
+    # puts notes_head
 
     name = weekly_notes_name
 
@@ -120,7 +130,20 @@ namespace :posts do
     # 删除草稿
     # File.delete(draft_notes)
 
-    puts name.to_s
+    puts "creat posts #{name} from draft #{draft_name}"
+  end
+
+  desc 'Create a Blog posts, read notes.'
+  task :read do |_t|
+    name = read_notes_name
+
+    puts "create posts #{name}"
+
+    notes = File.new("_posts/#{name}", 'w')
+
+    notes.puts read_notes_head
+
+    notes.close
   end
 end
 
@@ -144,6 +167,38 @@ description: "NOTES_TITLE_TODO_REPALCE"
 author: "魏仁言"
 date:  #{Time.now}
 categories: life notes
+toc: true
+---
+)
+
+  templete_head
+end
+
+def read_notes_name
+  day = Date.today
+
+  last_name = Dir['_posts/*-read-*.md'].max
+
+  year = last_name.split('-')[5].to_i
+
+  num = last_name.split('-')[6].to_i + 1
+
+  name = if num < 100
+           "#{day}-read-notes-#{year}-#{'%02d' % num}.md"
+         else
+           "#{day}-read-notes-#{year + 1}-#{format('%02d', 1)}.md"
+         end
+  name
+end
+
+def read_notes_head
+  templete_head = %(---
+layout: post
+title: "NOTES_TITLE_TODO_REPALCE"
+description: "NOTES_TITLE_TODO_REPALCE"
+author: "魏仁言"
+date:  #{Time.now}
+categories: read notes
 toc: true
 ---
 )
