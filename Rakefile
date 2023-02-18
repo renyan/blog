@@ -16,15 +16,42 @@ task :name, [:first_name, :last_name] do |_t, args|
   puts "Last  name is #{args.last_name}"
 end
 
-namespace :posts do
+namespace :drafts do
+  desc 'Show  all blog drafts'
+  task :all do |_t|
+    Dir['_drafts/*.md'].each do |fn|
+      puts fn.to_s
+    end
+  end
 
+  desc 'Creat a blog drafts'
+  task :new do |_t|
+    last = Dir['_drafts/*.md'].max
+
+    num = last.split('-')[1].to_i + 1
+
+    draft_name = "drafts-#{num}"
+
+    puts draft_name
+    # open()
+  end
+end
+
+namespace :posts do
   # posts file format :yyyy-mm-dd-#{notes_name}_#{num}
   # weekly notes: weekly
   # yyyy-mm-dd-#{notes_name}_notes_#{num}
   # read notes: read
   # yyyy-mm-dd-#{notes_name}_notes_#{yyyy}_#{num}
   #
-  
+
+  desc 'Show  all blog posts'
+  task :all do |_t|
+    Dir['_posts/*.md'].each do |fn|
+      puts fn.to_s
+    end
+  end
+
   desc 'Show a lastest Blog posts, default :notes_name is "weekly notes"'
   task :lastest, [:notes_name] do |_t, args|
     args.with_defaults(notes_name: 'weekly')
@@ -54,13 +81,6 @@ namespace :posts do
     notes.puts weekly_notes_head
 
     notes.close
-  end
-
-  desc 'Show  all blog posts'
-  task :all do |_t|
-    Dir['_posts/*.md'].each do |fn|
-      puts fn.to_s
-    end
   end
 
   desc 'Create a Blog posts from a draft .'
