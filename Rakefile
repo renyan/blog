@@ -33,6 +33,7 @@ namespace :drafts do
     draft_name = "drafts-#{num}"
 
     puts draft_name
+    sh "code _drafts/#{draft_name}.md"
     # open()
   end
 end
