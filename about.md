@@ -17,6 +17,14 @@ Name: {{site.author.name}}
 - 公众号：
 ![九思堂札记](/assets/images/qrcode_renyan.jpg? =20x20)
 
+
+```plantuml!
+    boo -> foo
+    foo --> boo
+
+```
+
+
 <!-- 
 You can find the source code for Minima at GitHub:
 [jekyll][jekyll-organization] /
