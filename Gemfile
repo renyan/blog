@@ -22,9 +22,7 @@ gem 'nokogiri', '~> 1.14.2'
 group :jekyll_plugins do
   gem 'jekyll-feed', '~> 0.15.1'
   gem 'jekyll-seo-tag' ,'~> 2.7'
-  # gem 'jekyll-remote-plantuml'
   gem 'jekyll-spaceship'
-  # gem 'kramdown-plantuml', '~> 1.0', '>= 1.0.5'
   gem 'jekyll-toc'
 
 end

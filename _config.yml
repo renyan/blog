@@ -27,23 +27,21 @@ url: "http://blog.renyan.org" # the base hostname & protocol for your site, e.g.
 # github_username:  renyan
 show_excerpts: true # set to true to show excerpts on the homepage
 
+#theme config
+
 minima:
   skin: dark
   social_links:
     twitter:  wrenyan
     github:  renyan
 
-disqus:
-  shortname: renyansblog
-  
-google_analytics: 'UA-41819202-1'
-  # provider : google
-  # google : 
-  #   tracking_id : 'UA-41819202-1'
-
 header_pages:
   - index.md
   - about.md
+
+toc:
+  ordered_list: true
+  # no_toc_section_class: exclude
 
 # Build settings
 markdown: kramdown
@@ -59,7 +57,7 @@ kramdown:
   syntax_highlighter: rouge
   toc_levels        : [1, 2, 3, 4, 5, 6]
 
-# Where things are
+# plugin things are
 jekyll-spaceship:
   # default enabled processors
   processors:
@@ -74,6 +72,17 @@ jekyll-spaceship:
       code: 'plantuml!'
       custom: ['@startuml', '@enduml']
     src: http://www.plantuml.com/plantuml/svg/
+
+
+#social comments
+disqus:
+  shortname: renyansblog
+
+#data analytics
+google_analytics: 'UA-41819202-1'
+
+
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
