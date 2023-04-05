@@ -79,7 +79,8 @@ disqus:
   shortname: renyansblog
 
 #data analytics
-google_analytics: 'UA-41819202-1'
+# google_analytics: 'UA-41819202-1'
+google_analytics: 'G-JBDQHSMGWL'
 
 
 
