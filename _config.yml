@@ -33,6 +33,13 @@ minima:
     twitter:  wrenyan
     github:  renyan
 
+disqus:
+  shortname: renyansblog
+  
+google_analytics: 'UA-41819202-1'
+  # provider : google
+  # google : 
+  #   tracking_id : 'UA-41819202-1'
 
 header_pages:
   - index.md
