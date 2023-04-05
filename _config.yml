@@ -40,7 +40,7 @@ header_pages:
   - about.md
 
 toc:
-  ordered_list: true
+  ordered_list: false
   # no_toc_section_class: exclude
 
 # Build settings
