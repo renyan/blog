@@ -4,6 +4,8 @@ require 'rake/phony'
 require 'rake'
 require 'date'
 
+require 'optparse'
+
 # default task is show posts lastest
 task default: ['posts:lastest']
 
@@ -14,6 +16,32 @@ task :name, [:first_name, :last_name] do |_t, args|
   args.with_defaults(first_name: 'John', last_name: 'Dough')
   puts "First name is #{args.first_name}"
   puts "Last  name is #{args.last_name}"
+end
+
+desc 'Method #3: Use ARGV to add two numbers and log the result'
+task :add_m1 do
+
+  ARGV.each { |a| task a.tno_sym do ; end }
+
+  puts ARGV[1].to_i + ARGV[2].to_i
+
+end
+
+desc 'Method #4: Use OptionParser to add two numbers and log the result'
+task :add, [:num1, :num] do |_t, args|
+  options = {}
+  opts = OptionParser.new
+  opts.banner = 'Usage: rake add [options]'
+  opts.on('-o', '--one ARG', Integer) { |num1| options[:num1] = num1 }
+  opts.on('-t', '--two ARG', Integer) { |num2| options[:num2] = num2 }
+  
+  args = opts.order!(ARGV) {}
+  opts.parse!(args)
+
+  puts options
+
+  puts options[:num1].to_i + options[:num2].to_i
+  exit
 end
 
 namespace :drafts do
@@ -34,7 +62,6 @@ namespace :drafts do
 
     puts draft_name
     sh "code _drafts/#{draft_name}.md"
-    # open()
   end
 end
 
@@ -145,6 +172,8 @@ namespace :posts do
     notes.puts read_notes_head
 
     notes.close
+
+    sh "code _posts/#{name}"
   end
 end
 
