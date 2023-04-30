@@ -63,6 +63,24 @@ namespace :drafts do
     puts draft_name
     sh "code _drafts/#{draft_name}.md"
   end
+
+  desc 'Creat a blog drafts'
+  task :rename do |_t|
+    last = Dir['_drafts/*.md']
+
+    last.each do| f|
+      num = f.split('-')[1].to_i - 1
+
+      draft_name = "drafts-#{num}"
+  
+      puts "rename #{f}  _drafts/#{draft_name}.md"
+
+      # sh "mv #{f}  _drafts/#{draft_name}.md"
+
+    end
+   
+  end
+
 end
 
 namespace :posts do
@@ -123,9 +141,6 @@ namespace :posts do
 
   desc 'Create a Blog posts from a draft .'
   task :draft do |_t|
-    # Dir['_drafts/*.md'].each do |fn|
-    #   puts fn.to_s
-    # end
 
     draft_name = Dir['_drafts/*.md'].max
 
@@ -159,6 +174,9 @@ namespace :posts do
     # File.delete(draft_notes)
 
     puts "creat posts #{name} from draft #{draft_name}"
+
+    sh "code _posts/#{name}"
+
   end
 
   desc 'Create a Blog posts, read notes.'
