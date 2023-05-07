@@ -15,7 +15,7 @@ Name: {{site.author.name}}
 
 ## Brand:
 - 公众号：
-![仁言九思](/assets/images/qrcode_renyan.jpg? =20x20)
+![仁言九思](/assets/images/qrcode_renyan.jpg){:width="120"}
 
 
 <!-- 
