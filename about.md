@@ -11,18 +11,18 @@ Name: {{site.author.name}}
 
 ## Description
 
-> 仁言九思，技术、生活、人生，有价值的心得与分享，仁人之言，其利博哉！
+> 仁言碎语·进化向上而生。这里记录技术、生活、人生，有价值的心得与分享！
 
-## Brand:
+
+## Content
+
+* 每周格致随想： 记录日常所学到的，所感想的，有价值的思考过程，思绪的全息日志。
+* 读书笔记： 读书不总结，犹如入宝山而空手而归，记录所阅读的读书摘要，读书笔记，读书总结。
+
+
+## Brand
+
 - 公众号：
 ![仁言九思](/assets/images/qrcode_renyan.jpg){:width="120"}
 
 
-<!-- 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-
-[jekyll-organization]: https://github.com/jekyll
- --> 

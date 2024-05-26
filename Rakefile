@@ -13,15 +13,19 @@ task posts: ['posts:lastest']
 
 desc 'a name args '
 task :name, [:first_name, :last_name] do |_t, args|
+  puts "#{_t},#{args.first_name}"
   args.with_defaults(first_name: 'John', last_name: 'Dough')
   puts "First name is #{args.first_name}"
   puts "Last  name is #{args.last_name}"
 end
 
+
+
+
 desc 'Method #3: Use ARGV to add two numbers and log the result'
 task :add_m1 do
 
-  ARGV.each { |a| task a.tno_sym do ; end }
+  ARGV.each { |a| task a.to_sym do ; end }
 
   puts ARGV[1].to_i + ARGV[2].to_i
 
@@ -30,18 +34,33 @@ end
 desc 'Method #4: Use OptionParser to add two numbers and log the result'
 task :add, [:num1, :num] do |_t, args|
   options = {}
-  opts = OptionParser.new
-  opts.banner = 'Usage: rake add [options]'
-  opts.on('-o', '--one ARG', Integer) { |num1| options[:num1] = num1 }
-  opts.on('-t', '--two ARG', Integer) { |num2| options[:num2] = num2 }
-  
-  args = opts.order!(ARGV) {}
-  opts.parse!(args)
+  # opts = OptionParser.new
+  # opts.banner = 'Usage: rake add [options]'
+  # opts.on('-o', '--one ARG', Integer) { |num1| options[:num1] = num1 }
+  # opts.on('-t', '--two ARG', Integer) { |num2| options[:num2] = num2 }
 
-  puts options
+  # args = opts.order!(ARGV) {}
+
+  # puts ARGV
+  # opts.parse!(args)
+
+  # puts options
+
+  # puts options[:num1].to_i + options[:num2].to_i
+  # exit
+
+  opts = OptionParser.new do |op|
+    op.banner = "Usage: rake add_numbers [OPTIONS]"
+    op.on('-o', '--one ARG', Integer, 'First number') { |num| options[:num1] = num }
+    op.on('-t', '--two ARG', Integer, 'Second number') { |num| options[:num2] = num }
+  end
+
+  opts.parse!(ARGV)
+
+  raise OptionParser::MissingArgument if %i[num1 num2].any? { |key| options[key].nil? }
 
   puts options[:num1].to_i + options[:num2].to_i
-  exit
+
 end
 
 namespace :drafts do
@@ -72,13 +91,13 @@ namespace :drafts do
       num = f.split('-')[1].to_i - 1
 
       draft_name = "drafts-#{num}"
-  
+
       puts "rename #{f}  _drafts/#{draft_name}.md"
 
       # sh "mv #{f}  _drafts/#{draft_name}.md"
 
     end
-   
+
   end
 
 end
@@ -87,6 +106,7 @@ namespace :posts do
   # posts file format :yyyy-mm-dd-#{notes_name}_#{num}
   # weekly notes: weekly
   # yyyy-mm-dd-#{notes_name}_notes_#{num}
+  #
   # read notes: read
   # yyyy-mm-dd-#{notes_name}_notes_#{yyyy}_#{num}
   #
@@ -192,6 +212,11 @@ namespace :posts do
     notes.close
 
     sh "code _posts/#{name}"
+  end
+
+  namespace :read do
+
+
   end
 end
 
